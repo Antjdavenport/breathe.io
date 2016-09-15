@@ -11,21 +11,11 @@ import Initial from './pages/initial';
 import Main from './pages/main';
 import appStore from './store/app-store';
 // import routes from './routes';
+import promise from 'redux-promise';
 
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
-
-
-// ReactDOM.render(
-//   <Router history={browserHistory}>
-//     <Route path="/" component={Initial}></Route>
-//     {/* <IndexRoute component={App}></IndexRoute> */}
-//     <Route path="/app" component={App}></Route>
-//
-//
-//   </Router>,
-// document.querySelector('.main-container'));
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>

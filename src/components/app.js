@@ -12,7 +12,7 @@ export default class App extends React.Component {
     this.state = {
       // title: "adf",
       store: AppStore.getAll(),
-      title: "heok"
+      title: 3
 
     };
 
@@ -28,7 +28,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="center-box"><Circle /></div>
+      <div className="center-box"><Circle title={this.state.title} /></div>
 
     );
   }

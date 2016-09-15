@@ -10,6 +10,7 @@ import reducers from './reducers';
 import Initial from './pages/initial';
 import Main from './pages/main';
 import appStore from './store/app-store';
+import routes from './routes';
 
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -28,6 +29,6 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-  <Router history={browserHistory} />
-    <Initial />
+  <Router history={browserHistory} routes={routes} />
+
   </Provider>, document.querySelector('.main-container'));

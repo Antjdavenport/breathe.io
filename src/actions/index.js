@@ -1,8 +1,23 @@
-export function selectBook(book) {
-  // selectBook is an ActionCreator, it needs to return an action, an object with a type property.
-  // must have a type, and a payload. Payload is a peice of data that describes the action undertaken
+
+
+export function inBreathAction(props){
+
   return {
-    type: 'BOOK_SELECTED',
-    payload: book
+    type: 'IN_BREATH',
+    payload: props,
+
   };
+
+
+}
+
+export function outBreathAction(props){
+
+  return {
+    type: 'OUT_BREATH',
+    payload: props,
+
+  };
+
+
 }

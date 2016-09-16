@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { connect } from 'react-redux';
 import Container from '../containers/container';
 import BookDetail from '../containers/book-detail';
-
+import UserForm from '../components/userForm';
 
 export default class Initial extends Component  {
   constructor(){
@@ -12,12 +12,6 @@ export default class Initial extends Component  {
       term : "",
       title: "As"
     }
-  }
-
-  renderList() {
-    return (
-    <Container / >
-    );
 
   }
 
@@ -25,21 +19,11 @@ export default class Initial extends Component  {
   render() {
     return (
       <div>
-      <p>Your in-breaths in seconds...</p>
-      <BookDetail / >
-      {this.renderList()}
-      <input
-      value={this.state.term}
-      onChange={event => this.onInputEnter(event.target.value)}></input>
-      <br/>
-          <Link to="/app">Start</Link>
+      <UserForm />
       </div>
     );
   }
-  onInputEnter(term){
-    this.setState({term});
 
-  }
 }
 
 function mapStateToProps(state) {

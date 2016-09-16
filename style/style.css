@@ -13,7 +13,7 @@
   width: 45vw;
   height:65vw;
   max-height: 600px;
-  border: solid 2px red;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -35,3 +35,8 @@
   margin: 0 auto;
 
 }
+
+.btn-primary {
+    color: #000;
+
+  }

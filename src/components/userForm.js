@@ -24,7 +24,7 @@ class userForm extends Component {
     this.props.inBreathAction(this.state.term);
     this.props.outBreathAction(this.state.term2);
 
-    // this.props.
+
   }
   checkAppState(){
     console.log(this.props.breath);

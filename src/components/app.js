@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import Circle from './circle';
 import Initial from '../pages/initial';
 import AppStore from '../store/AppStore';
+import AudioContainer from './audioContainer';
+import Text from './text';
+
 
 
 export default class App extends React.Component {
+
+
 
   constructor() {
     super();
@@ -18,6 +23,7 @@ export default class App extends React.Component {
 
 }
 
+
 // componentsWillMount() {
 //   AppStore.on("change", () => {
 //     this.setState({
@@ -28,7 +34,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="center-box"><Circle /></div>
+      <div
+      className="container"
+        >
+        <Text />
+        <Circle />
+  <AudioContainer />
+      </div>
+
 
     );
   }

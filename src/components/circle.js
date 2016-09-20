@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import animate from '../animation/animation';
 
 class Circle extends Component {
   takeNumber(){
+    console.log(number);
+    console.log(numberTwo);
   var number = this.props.breath;
   var numberTwo = this.props.outBreath;
-  console.log(this.props.breath, this.props.outBreath);
+  // console.log(this.state.breath, this.state.outBreath);
   animate(number, numberTwo)
 
 }
 
 constructor() {
   super();
-
+  this.state = {
+    // breath: 3,
+    // outBreath: 3
+  }
   setTimeout(this.takeNumber.bind(this), 500);
 
 }
@@ -41,14 +47,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Circle);
-
-// console.log({this.props.name});
-var animate = function(number, numberTwo) {
-
-var circle = document.getElementsByClassName("circle");
-var timeline1 = new TimelineMax({repeat: 5});
-// var number = number;
-timeline1.to(circle, number, {scaleX:1.5, scaleY:1.5, ease: Power2.easeInOut});
-timeline1.to(circle, numberTwo, {scaleX:0.2, scaleY:0.2, ease: Power2.easeInOut});
-
-};

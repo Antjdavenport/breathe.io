@@ -6,7 +6,8 @@ export default function(number, numberTwo) {
   var timeline1 = new TimelineMax({repeat: -1});
 
   var colorPalet = ["313A75", "27566B", "472E74", "236863", "104050", "6C929F"];
-  var colorPalet2 = ["D8DBE2", "A9BCD0", "472E74", "58A4B0", "373F51", "DAA49A"]
+  var colorPalet2 = ["533747", "5F506B", "6A6B83", "76949F", "86BBBD"]
+  var colorPalet3 = ["D8DBE2", "A9BCD0", "472E74", "58A4B0", "373F51", "DAA49A"]
 
 console.log(number);
 console.log(numberTwo);
@@ -24,7 +25,7 @@ function getRandomArbitrary(min, max) {
 
 
 function update(){
-  return colorPalet2[getRandomArbitrary(0,6)];
+  return colorPalet3[getRandomArbitrary(0,6)];
 }
 
   //returns a random integer in a range
@@ -35,7 +36,8 @@ function random(min, max) {
 tweenToRandomColor();
   function tweenToRandomColor() {
 
-    TweenLite.to(circle, changeColor, {css:{backgroundColor:"rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")"}, onComplete:tweenToRandomColor});
+    // TweenLite.to(circle, changeColor, {css:{backgroundColor:"rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")"}, onComplete:tweenToRandomColor});
+      TweenLite.to(circle, changeColor, {css:{backgroundColor:"rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")"}, onComplete:tweenToRandomColor});
   }
 
 

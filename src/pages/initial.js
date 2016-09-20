@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Container from '../containers/container';
 import BookDetail from '../containers/book-detail';
 import UserForm from '../components/userForm';
+import Logo from '../components/logo';
 
 export default class Initial extends Component  {
   constructor(){
@@ -18,7 +19,8 @@ export default class Initial extends Component  {
 
   render() {
     return (
-      <div>
+      <div className="container">
+      <Logo />
       <UserForm />
       </div>
     );

@@ -1,6 +1,6 @@
 
 .main-container {
-  /*background-color: #472E74;*/
+  background-color: #6A6B83;
   height:100vh;
   width: 100%;
   display: flex;
@@ -78,7 +78,21 @@ top: 5%;
 
 .audioContainer label{
   color: grey;
-  font-family: 'David Libre', serif;``
+  font-family: 'David Libre', serif;
+}
+
+.logo {
+    font-family: 'David Libre', serif;
+    font-size: 10vw;
+    color: #373F51;
+    position: absolute;
+    top: 10%;
+
+
+}
+
+h4 {
+  font-size: 15px;
 }
 
 .btn-primary {

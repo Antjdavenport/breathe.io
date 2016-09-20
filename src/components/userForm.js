@@ -38,11 +38,8 @@ class userForm extends Component {
     // const outBreath = this.props.fields.outBreath;
 
     return (
-      // <form onSubmit={handleSubmit(this.props.storeUserForm)}>
+
       <form onSubmit={this.onFormSubmit}>
-      <h4
-      // onClick={() => this.props.breathAction(this.state.term)}
-      >Your breaths in seconds...</h4>
 
       <div className="form-group">
       <label>In Breath</label>
@@ -67,8 +64,15 @@ class userForm extends Component {
             // {...outBreath}
             />
           </div>
+          <div className="form-group">
+          <h4>Changing background color?</h4>
+          <label className="switch" onChange={this.playSound}>
+            <input type="checkbox" defaultChecked></input>
+            <div className="slider round"></div>
+          </label>
+            </div>
 
-          <Link to="/app" type="submit" onClick={this.sendData} className="btn btn-primary">Meditate</Link>
+          <Link to="/app" type="submit" onClick={this.sendData} className="btn btn-primary">Breathe</Link>
       </form>
       );
   }

@@ -1,7 +1,10 @@
-# Breath.io
+# Breathe.io
 
-An SPA for visual meditation and mindfulness.
+An simple visual meditation app to help calm and relax.
 
-Built with React + Redux
+Time your breathing with the circle. Breath in as the circle grows,
+out as it shrinks. Choose from a number of background sounds also. 
 
-build 0.1
+Built with React + Redux and deployed to Heroku
+
+version 1. Alpha Build

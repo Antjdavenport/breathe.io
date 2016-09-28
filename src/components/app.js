@@ -23,6 +23,14 @@ export default class App extends React.Component {
 
 }
 
+open() {
+    var audioContainer = document.getElementsByClassName('audioContainer')
+    $(audioContainer).animate({left: 0}, 200);
+
+  }
+
+
+
 
 // componentsWillMount() {
 //   AppStore.on("change", () => {
@@ -35,12 +43,17 @@ export default class App extends React.Component {
   render() {
     return (
       <div
-      className="container"
+      className="app-container"
         >
-        <Text />
         <Circle />
-  <AudioContainer />
-      </div>
+        <AudioContainer />
+        <div
+        className="openBtn">
+
+        <h1><span className="tag tag-default" onClick={this.open}>Options</span></h1>
+
+        </div>
+          </div>
 
 
     );

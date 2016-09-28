@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default function(number, numberTwo) {
+export default function(number, numberTwo, bgON) {
 
   var circle = document.getElementsByClassName("circle");
   var timeline1 = new TimelineMax({repeat: -1});
@@ -14,8 +14,8 @@ console.log(numberTwo);
 
   var changeColor = number + numberTwo;
 
-  timeline1.to(circle, number, {css:{scaleX:"2.6", scaleY:"2.6"}, ease: Expo.easeInOut});
-  timeline1.to(circle, numberTwo, {css:{scaleX:"0.05", scaleY:"0.05"}, ease: Expo.easeInOut});
+  timeline1.to(circle, number, {css:{scaleX:"1", scaleY:"1"}, ease: Expo.easeInOut});
+  timeline1.to(circle, numberTwo, {css:{scaleX:"0.02", scaleY:"0.02"}, ease: Expo.easeInOut});
 
   var ctx = document.getElementsByClassName("main-container");
 
@@ -40,6 +40,7 @@ tweenToRandomColor();
       TweenLite.to(circle, changeColor, {css:{backgroundColor:"rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")"}, onComplete:tweenToRandomColor});
   }
 
+if (bgON) {
 
   function randomBG(min, max) {
     return (min + Math.random() * (max - min) + 0.5) | 0;
@@ -47,12 +48,12 @@ tweenToRandomColor();
 
 tweenToRandomColorBG();
   function tweenToRandomColorBG() {
-    TweenLite.to(ctx, 10, {css:{backgroundColor:"#" + update() + "" }, onUpdate:update, onComplete:tweenToRandomColorBG});
+    TweenLite.to(ctx, 20, {css:{backgroundColor:"#" + update() + "" }, onUpdate:update, onComplete:tweenToRandomColorBG});
   }
 
 }
 
-
+};
 
 
 // var timeline2 = new TimelineMax({repeat: 8, yoyo:true});

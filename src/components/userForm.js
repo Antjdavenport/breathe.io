@@ -3,6 +3,7 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { inBreathAction } from '../actions/index';
 import { outBreathAction } from '../actions/index';
+import {isChecked} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import { Link } from "react-router";
 // import { storeUserForm } from '../actions/index';
@@ -10,10 +11,14 @@ import { Link } from "react-router";
 class userForm extends Component {
   constructor(){
     super()
-    this.state = {term: '', term2: ''}
+    this.state = {
+        term: '',
+        term2: '',
+        isChecked: 'true'}
 
     this.sendData = this.sendData.bind(this);
     this.checkAppState = this.checkAppState.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   onFormSubmit(event){
@@ -23,6 +28,7 @@ class userForm extends Component {
     console.log("yes");
     this.props.inBreathAction(this.state.term);
     this.props.outBreathAction(this.state.term2);
+    this.props.isChecked(this.state.isChecked);
 
 
   }
@@ -30,6 +36,13 @@ class userForm extends Component {
     console.log(this.props.breath);
     console.log(this.props.outBreath)
   }
+
+  handleChange(event){
+      console.log(this.state.slider);
+    this.setState({slider: event.target.value});
+
+  }
+
 
   // this.props.breathAction(this.state.term)
   render(){
@@ -39,24 +52,27 @@ class userForm extends Component {
 
     return (
 
-      <form onSubmit={this.onFormSubmit}>
+      <form id="contact_form" className="userForm" onSubmit={this.onFormSubmit}>
 
       <div className="form-group">
       <label>In Breath</label>
       <input
           type="input"
+          name="breath"
           className="form-control"
           onChange={(event) => this.setState({term: event.target.value})}
           id="secondsInput"
           placeholder="Enter seconds"
           // {...inBreath}
           />
+          <div className="help-block with-errors"></div>
         </div>
 
         <div className="form-group">
         <label onClick={this.checkAppState}>Out Breath</label>
         <input
             type="input"
+            name="breath"
             className="form-control"
             onChange={(event) => this.setState({term2: event.target.value})}
             id="secondsInput"
@@ -66,13 +82,19 @@ class userForm extends Component {
           </div>
           <div className="form-group">
           <h4>Changing background color?</h4>
-          <label className="switch" onChange={this.playSound}>
-            <input type="checkbox" defaultChecked></input>
+          <label className="switch">
+            <input
+                id="bgCheck"
+                type="checkbox"
+                defaultChecked onChange={() => this.setState({isChecked: document.getElementById("bgCheck").checked})}>
+            </input>
             <div className="slider round"></div>
           </label>
             </div>
 
-          <Link to="/app" type="submit" onClick={this.sendData} className="btn btn-primary">Breathe</Link>
+
+          <Link to="/app" onClick={this.sendData} className="btn btn-secondary">Breathe</Link>
+
       </form>
       );
   }
@@ -89,14 +111,14 @@ class userForm extends Component {
 function mapStateToProps(state) {
   return {
     breath: state.breath,
-    outBreath: state.outBreath
+    outBreath: state.outBreath,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result should be passed
   // to all of our reducers
-  return bindActionCreators({ inBreathAction: inBreathAction, outBreathAction: outBreathAction }, dispatch);
+  return bindActionCreators({ inBreathAction: inBreathAction, outBreathAction: outBreathAction, isChecked: isChecked }, dispatch);
 }
 
 

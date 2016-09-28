@@ -1,29 +1,49 @@
 
 .main-container {
-  background-color: #6A6B83;
-  height:100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #898b9e;
 }
 
-.container {
-  /*background-color: black;*/
-  height:100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
+.app-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
+  .container-circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+.openBtn {
+  position: fixed;
+  left: 10px;
+  top: 0%;
+  opacity: 0.7;
+  cursor: pointer;
+}
 
 .center-box {
-  /*width: 45vw;
-  height:65vw;*/
+
   max-height: 600px;
   position: relative;
   display: flex;
@@ -35,9 +55,7 @@
 
 .text {
 font-family: 'David Libre', serif;
-/*font-size: 4vw;*/
 color: grey;
-position: absolute;
 top: 5%;
 }
 
@@ -46,26 +64,51 @@ top: 5%;
   background-color: white;
 }
 
-.circle {
+.circle  {
   border-radius: 50%;
-  width: 20vw;
-  height: 20vw;
-  transform: scale(0.05);
+  position: relative;
+  width: 50%;
+  max-height: 1500px;
+  max-width: 1500px;
+  padding-bottom: 50%;
   background-color: #919191;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   align-content: center;
+  overflow:hidden;
+  transform: scale(.02);
 
 }
 
+
+
 .audioContainer {
-  position: absolute;
-  bottom: 5%;
-  width: 100%;
+  background-color: rgba(255,255,255, 0.7);
+  border-radius: 4px;
+  height: 100%;
   display: flex;
   justify-content: space-around;;
-  flex-direction: row;
+  flex-direction: column;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+
+}
+
+.audioList{
+    display: flex;
+    flex-direction: row;
+}
+
+.audioComponents{
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .audioPlayerOne {
@@ -74,6 +117,7 @@ top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 25px;
 }
 
 .audioContainer label{
@@ -81,22 +125,41 @@ top: 5%;
   font-family: 'David Libre', serif;
 }
 
+.logo_container{
+  position: relative;;
+  top: 10%;
+  margin: 50px;
+  padding: 0;
+}
 .logo {
     font-family: 'David Libre', serif;
-    font-size: 10vw;
+    font-size: 50px;
     color: #373F51;
-    position: absolute;
-    top: 10%;
+    line-height: 1;
+    text-align: center;
 
+}
 
+.logo_sub {
+  font-family: 'David Libre', serif;
+  font-size: 20px;
+  color: #373F51;
+
+}
+
+.userForm {
+  max-width: 200px;
+  margin: auto;
 }
 
 h4 {
   font-size: 15px;
 }
 
-.btn-primary {
-    color: #000;
+.btn-secondary {
+
+    width: 150px;
+    margin: 5px;
 
   }
 
@@ -117,7 +180,7 @@ h4 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #bfb3b3;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -135,7 +198,7 @@ h4 {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #000000;
 }
 
 input:focus + .slider {
@@ -167,3 +230,5 @@ li {
   margin: 0;
   align-content: center;
 }
+
+#success_message{ display: none;}

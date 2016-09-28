@@ -11,7 +11,6 @@ export default class Initial extends Component  {
     super()
     this.state = {
       term : "",
-      title: "As"
     }
 
   }

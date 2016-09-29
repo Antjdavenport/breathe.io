@@ -10,14 +10,15 @@ Built with React + Redux. Deployed using Heroku.
 
 
 Full technology list:
-
-Webpack,
-ReactJS,
-React Router,
-Redux,
-GreensockJS
-HowlerJS
-ColorJS
-Jquery
+<ul>
+<li>Webpack,</li>
+<li>ReactJS,</li>
+<li>React Router,</li>
+<li>Redux,</li>
+<li>GreensockJS,</li>
+<li>HowlerJS,</li>
+<li>ColorJS,</li>
+<li>jquery.</li>
+</ul>
 
 build: Alpha 2

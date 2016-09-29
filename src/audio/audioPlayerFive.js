@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 var volume = 0.5;
 var sound = new Howl({
-  src: ['./audio/crystalC.wav'],
+  src: ['./audio/crystalC.mp3'],
     loop: true,
     volume: volume
   });

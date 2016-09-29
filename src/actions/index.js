@@ -46,3 +46,11 @@ export function isChecked(props){
 
 
 }
+
+export function colorInputs(props){
+
+  return {
+    type: 'CUSTOM_COLORS',
+    payload: props,
+  };
+}

@@ -119,15 +119,21 @@ top: 5%;
   align-items: center;
   margin: 25px;
 }
+.formSection {
+  margin-right: 20px;
+}
 
 .audioContainer label{
   color: grey;
   font-family: 'David Libre', serif;
 }
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .logo_container{
-  position: relative;;
-  top: 10%;
   margin: 50px;
   padding: 0;
 }
@@ -147,9 +153,21 @@ top: 5%;
 
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .userForm {
-  max-width: 200px;
+  display: flex;
+  flex-direction: row;
   margin: auto;
+}
+
+.formHolder {
+  display: flex;
+  flex: row;
 }
 
 h4 {
@@ -157,18 +175,34 @@ h4 {
 }
 
 .btn-secondary {
-
     width: 150px;
     margin: 5px;
 
   }
-
 
   .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+}
+
+.customColors {
+width: 270px;
+margin-bottom: 20px;
+display: none;
+opacity: 0;
+
+}
+
+.colorInputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.colorInput {
+  width: 80px;
+  margin: 2px
 }
 
 .switch input {display:none;}

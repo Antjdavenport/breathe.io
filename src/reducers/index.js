@@ -4,6 +4,7 @@ import ActiveBook from './reducer_active_book';
 import breathReducer from './breathReducer';
 import outBreathReducer from './outBreathReducer';
 import isCheckedReducer from './isCheckedReducer';
+import customColorsReducer from './customColorsReducer';
 import {reducer as formReducer} from 'redux-form';
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   activeBook: ActiveBook,
   breath: breathReducer,
   outBreath: outBreathReducer,
-  bgON: isCheckedReducer
+  isChecked: isCheckedReducer,
+  customColors: customColorsReducer
 });
 
 export default rootReducer;

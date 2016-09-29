@@ -14,7 +14,8 @@ componentDidMount() {
   var number = this.props.breath;
   var numberTwo = this.props.outBreath;
   var bgON = this.props.bgON;
-  animate(number, numberTwo, bgON);
+  var isChecked = this.props.isChecked;
+  animate(number, numberTwo, isChecked, this.props.customColors);
     // console.log(canvas);
   // console.log(this.state.breath, this.state.outBreath);
   // animate(number, numberTwo, bgON, ctx)
@@ -30,7 +31,7 @@ constructor() {
     // outBreath: 3
   }
   setTimeout(this.takeNumber.bind(this), 500);
-
+this.clickstuff = this.clickstuff.bind(this);
 }
 
 
@@ -38,7 +39,7 @@ constructor() {
 render(){
   return (
     <div className="container-circle">
-    <div className="circle">
+    <div className="circle" onClick={this.clickstuff}>
 
    </div>
    </div>
@@ -46,7 +47,7 @@ render(){
   );
 }
 clickstuff() {
-
+console.log(this.props.customColors.customColors[0])
 // animate();
 }
 }
@@ -60,7 +61,8 @@ function mapStateToProps(state) {
   return {
       breath: state.breath.inBreath,
       outBreath: state.outBreath.outBreath,
-      bgON: state.bgON
+      isChecked: state.isChecked,
+      customColors: state.customColors
   };
 }
 
